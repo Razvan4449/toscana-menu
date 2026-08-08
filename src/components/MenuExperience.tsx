@@ -339,16 +339,16 @@ export default function MenuExperience() {
 
         <div className="js-reveal mx-auto flex max-w-lg flex-col items-center">
           <ChefLogo size="lg" />
-          <p className="mt-5 font-label text-[0.65rem] uppercase tracking-[0.34em] text-amber">
+          <p className="mt-5 font-label text-[0.7rem] uppercase tracking-[0.28em] text-amber">
             {brand.finaleLabel}
           </p>
           <h2 className="mt-3 font-display text-[clamp(2.6rem,12vw,4rem)] leading-none">
             {brand.finaleTitle}
           </h2>
-          <p className="mt-4 max-w-xs font-display text-lg leading-snug text-butter">
+          <p className="mt-6 max-w-sm text-[0.95rem] leading-relaxed text-parchment/75">
             {brand.finaleLine}
           </p>
-          <p className="mt-3 max-w-sm text-sm leading-relaxed text-parchment/60">
+          <p className="mt-6 font-display text-2xl leading-snug text-butter">
             {brand.finaleSub}
           </p>
           <p className="mt-10 font-label text-[0.58rem] uppercase tracking-[0.22em] text-parchment/40">

@@ -10,10 +10,11 @@ export const brand = {
   overviewBody: "Mic meniu, ambitie mare, sper ca v-ati EDIficat.",
   cta: "Deschide meniul",
   chefQuote: "Niciodata candva\nS a intamplat sa nu fie\nVreodata undeva candva.",
-  finaleLabel: "Serviciu incheiat",
+  finaleLabel: "Va pup si va respekt.",
   finaleTitle: "Buon appetito",
-  finaleLine: "Perla a aterizat in Toscana.",
-  finaleSub: "Ne vedem la masa. Foamea da, demnitatea nu e obligatorie.",
+  finaleLine:
+    "Acesta experienta a fost gandita, creata, dibuita, nascocita, implementata, rumenita si desavarsita de RAZVAN ANDREI VASILIU CNP: 1209338209, COD CAYENNE: 0000001, 1,76m , 25 ani, marime papuc: 43 , fan redbull, audi, aston martin, cadillac, ferrari, redbull, audi.",
+  finaleSub: "Ma inclin.",
 };
 
 export const faq = [
