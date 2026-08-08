@@ -1,35 +1,44 @@
 @import "tailwindcss";
 
 :root {
-  --ink: #0a0908;
-  --ink-soft: #141210;
-  --ink-lift: #1c1916;
-  --parchment: #e8e2d6;
-  --parchment-muted: #b5aea0;
-  --parchment-dim: #7a7468;
-  --olive: #8a9a72;
-  --olive-soft: #6f7d5c;
-  --brass: #9a8b6a;
-  --brass-dim: rgba(154, 139, 106, 0.35);
-  --haze: rgba(232, 226, 214, 0.04);
-  --background: var(--ink);
-  --foreground: var(--parchment);
+  --parchment: #f3e6d0;
+  --toasted: #e8d4b8;
+  --butter: #f6e7b8;
+  --terracotta: #c45c3e;
+  --sienna: #9e3b2a;
+  --tomato: #d63b2f;
+  --wine: #6b1f2a;
+  --olive: #6b7f4a;
+  --cypress: #3f5340;
+  --navy: #1e2a44;
+  --gold: #c9a227;
+  --amber: #f0c14a;
+  --espresso: #2c2118;
+  --night: #1a0e12;
+  --background: var(--parchment);
+  --foreground: var(--espresso);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --color-ink: var(--ink);
-  --color-ink-soft: var(--ink-soft);
-  --color-ink-lift: var(--ink-lift);
   --color-parchment: var(--parchment);
-  --color-parchment-muted: var(--parchment-muted);
-  --color-parchment-dim: var(--parchment-dim);
+  --color-toasted: var(--toasted);
+  --color-butter: var(--butter);
+  --color-terracotta: var(--terracotta);
+  --color-sienna: var(--sienna);
+  --color-tomato: var(--tomato);
+  --color-wine: var(--wine);
   --color-olive: var(--olive);
-  --color-olive-soft: var(--olive-soft);
-  --color-brass: var(--brass);
-  --font-sans: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
-  --font-display: var(--font-instrument), ui-serif, Georgia, serif;
+  --color-cypress: var(--cypress);
+  --color-navy: var(--navy);
+  --color-gold: var(--gold);
+  --color-amber: var(--amber);
+  --color-espresso: var(--espresso);
+  --color-night: var(--night);
+  --font-display: var(--font-fraunces), ui-serif, Georgia, serif;
+  --font-sans: var(--font-nunito), ui-sans-serif, system-ui, sans-serif;
+  --font-label: var(--font-nunito), ui-sans-serif, system-ui, sans-serif;
 }
 
 * {
@@ -41,53 +50,49 @@ html {
 }
 
 body {
-  background: var(--ink);
-  color: var(--parchment);
+  background: var(--parchment);
+  color: var(--espresso);
   min-height: 100%;
   overflow-x: hidden;
+  font-family: var(--font-sans);
 }
 
 ::selection {
-  background: rgba(138, 154, 114, 0.35);
-  color: var(--parchment);
+  background: rgba(198, 92, 62, 0.28);
+  color: var(--espresso);
 }
 
-.atmosphere {
-  background:
-    radial-gradient(120% 80% at 50% -10%, rgba(138, 154, 114, 0.12), transparent 55%),
-    radial-gradient(90% 60% at 100% 20%, rgba(154, 139, 106, 0.08), transparent 45%),
-    radial-gradient(70% 50% at 0% 80%, rgba(138, 154, 114, 0.06), transparent 40%),
-    linear-gradient(180deg, #0c0b0a 0%, #0a0908 40%, #080706 100%);
+.paper-texture {
+  background-image:
+    radial-gradient(ellipse at 20% 10%, rgba(246, 231, 184, 0.55), transparent 45%),
+    radial-gradient(ellipse at 90% 30%, rgba(196, 92, 62, 0.08), transparent 40%),
+    linear-gradient(180deg, rgba(243, 230, 208, 0.95), rgba(232, 212, 184, 0.9));
 }
 
-.grain {
-  pointer-events: none;
-  position: fixed;
-  inset: 0;
-  z-index: 50;
-  opacity: 0.045;
-  mix-blend-mode: overlay;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+.btn-wobble:hover {
+  animation: wobble 0.55s ease;
 }
 
-.menu-rule {
-  height: 1px;
-  width: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    var(--brass-dim) 20%,
-    var(--brass-dim) 80%,
-    transparent
-  );
+@keyframes wobble {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-1.4deg) scale(1.01);
+  }
+  50% {
+    transform: rotate(1.2deg);
+  }
+  75% {
+    transform: rotate(-0.6deg);
+  }
 }
 
-.course-nav::-webkit-scrollbar {
-  display: none;
-}
-
-.course-nav {
-  scrollbar-width: none;
+.pasta-stroke,
+.scribble-stroke {
+  stroke-dasharray: 220;
+  stroke-dashoffset: 0;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -95,12 +100,31 @@ body {
     scroll-behavior: auto;
   }
 
-  .js-hero-brand,
-  .js-hero-line,
+  .btn-wobble:hover {
+    animation: none;
+  }
+
+  .js-bulb,
+  .js-hero-logo,
+  .js-hero-title,
+  .js-hero-sub,
   .js-hero-cta,
-  .js-dish,
-  .js-course-head {
+  .js-chapter,
+  .js-course-head,
+  .js-ingredient,
+  .js-step,
+  .js-beat,
+  .js-finale,
+  .js-shop-head,
+  .js-shop-group,
+  .js-splash-logo,
+  .js-splash-text {
     opacity: 1 !important;
     transform: none !important;
   }
+}
+
+:focus-visible {
+  outline: 3px solid var(--amber);
+  outline-offset: 3px;
 }

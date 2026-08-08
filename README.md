@@ -1,17 +1,17 @@
-# Toscana Menu
+# VASILIU’S
 
-A mobile-first, Michelin-inspired digital menu for classic Tuscan cuisine — antipasti, primi, secondi, and dolci.
+A mobile-first, animated Tuscan dinner experience for a private vacation feast among friends.
 
-## Develop
+## Scripts
 
 ```bash
 npm install
 npm run dev
-```
-
-## Build
-
-```bash
 npm run build
-npm start
 ```
+
+## Routes
+
+- `/` — cinematic menu journey
+- `/cooking` — kitchen cooking mode
+- `/shopping` — checklist with localStorage

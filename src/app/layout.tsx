@@ -1,30 +1,36 @@
-import type { Metadata } from "next";
-import { Instrument_Serif, Manrope } from "next/font/google";
+import type { Metadata, Viewport } from "next";
+import { Fraunces, Nunito } from "next/font/google";
+import BottomNav from "@/components/BottomNav";
 import "./globals.css";
 
-const display = Instrument_Serif({
-  weight: "400",
+const display = Fraunces({
   subsets: ["latin"],
-  variable: "--font-instrument",
+  variable: "--font-fraunces",
   display: "swap",
 });
 
-const sans = Manrope({
+const sans = Nunito({
   subsets: ["latin"],
-  variable: "--font-manrope",
+  variable: "--font-nunito",
   display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "Toscana — Cucina Toscana",
+  title: "VASILIU’S — Una Cena in Toscana",
   description:
-    "A premium Tuscan tasting menu: antipasti, primi, secondi, and dolci — crafted with quiet luxury.",
+    "A goofy cinematic Tuscan dinner menu for friends on vacation: courses, shopping list, timeline, and cooking mode.",
   openGraph: {
-    title: "Toscana — Cucina Toscana",
+    title: "VASILIU’S — Una Cena in Toscana",
     description:
-      "A premium Tuscan tasting menu: antipasti, primi, secondi, and dolci.",
+      "11 amici · un tavolo · troppo cibo. The weirdest best trattoria dinner night.",
     type: "website",
   },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#1A0E12",
+  width: "device-width",
+  initialScale: 1,
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
@@ -33,7 +39,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${display.variable} ${sans.variable} h-full antialiased`}
     >
-      <body className="min-h-full font-sans text-parchment">{children}</body>
+      <body className="paper-texture min-h-full font-sans text-espresso">
+        {children}
+        <BottomNav />
+      </body>
     </html>
   );
 }

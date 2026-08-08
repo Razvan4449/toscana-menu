@@ -1,5 +1,5 @@
-import MenuExperience from "@/components/MenuExperience";
+import HomeExperience from "@/components/HomeExperience";
 
 export default function Home() {
-  return <MenuExperience />;
+  return <HomeExperience />;
 }
