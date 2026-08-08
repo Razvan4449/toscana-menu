@@ -91,21 +91,21 @@ export const courses: Course[] = [
     number: "02",
     title: "Main",
     italian: "Protagonistul serii",
-    vibe: "Felul asta are main character energy.",
-    note: "Business foarte serios cu mancarea. Comportament de villa certificat.",
+    vibe: "Mens sana in corpore sano.",
+    note: "",
     tone: "wine",
     dishes: [
       {
         name: "Carbonara Monumentale",
-        line: "Fara smantana. Fara frica. Doar destin.",
+        line: "D alea adevarate brother nu cu smantana sau alte nebunii, i auzi sunca bacon, c avetz ma.",
       },
       {
-        name: "Tagliata di Manzo",
-        line: "Prea elegant pentru haosul din jur.",
+        name: "Pici all’Aglione",
+        line: "Rosii tata, nu asa, rosii.",
       },
       {
-        name: "Contorno del Giorno",
-        line: "Actorul secundar care fura scena.",
+        name: "Lasagna",
+        line: "Starturi vere, cate una cate doua cate trei cate patru cate cinci cate sase.",
       },
     ],
   },
