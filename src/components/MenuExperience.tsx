@@ -125,6 +125,24 @@ function CourseSection({ course, index }: { course: Course; index: number }) {
               <p className={`mt-2 text-[0.98rem] leading-relaxed ${muted[course.tone]}`}>
                 {dish.line}
               </p>
+              <p className={`mt-4 text-[0.88rem] leading-relaxed ${muted[course.tone]}`}>
+                <span
+                  className={`font-label text-[0.58rem] uppercase tracking-[0.22em] ${accent[course.tone]}`}
+                >
+                  Ingrediente
+                </span>
+                <span className="mt-1 block">{dish.ingredients.join(" · ")}</span>
+              </p>
+              <p className={`mt-3 text-[0.82rem] leading-relaxed ${muted[course.tone]}`}>
+                <span
+                  className={`font-label text-[0.58rem] uppercase tracking-[0.22em] ${accent[course.tone]}`}
+                >
+                  Alergeni
+                </span>
+                <span className="mt-1 block italic">
+                  {dish.allergens.length ? dish.allergens.join(", ") : "—"}
+                </span>
+              </p>
             </li>
           ))}
         </ul>

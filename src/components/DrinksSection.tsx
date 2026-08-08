@@ -40,6 +40,20 @@ export default function DrinksSection() {
               <p className="mt-2 text-[0.98rem] leading-relaxed text-parchment/70">
                 {item.line}
               </p>
+              <p className="mt-4 text-[0.88rem] leading-relaxed text-parchment/65">
+                <span className="font-label text-[0.58rem] uppercase tracking-[0.22em] text-amber">
+                  Ingrediente
+                </span>
+                <span className="mt-1 block">{item.ingredients.join(" · ")}</span>
+              </p>
+              <p className="mt-3 text-[0.82rem] leading-relaxed text-parchment/65">
+                <span className="font-label text-[0.58rem] uppercase tracking-[0.22em] text-amber">
+                  Alergeni
+                </span>
+                <span className="mt-1 block italic">
+                  {item.allergens.length ? item.allergens.join(", ") : "—"}
+                </span>
+              </p>
             </li>
           ))}
         </ul>

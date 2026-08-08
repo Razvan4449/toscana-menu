@@ -50,6 +50,8 @@ export const faq = [
 export type Dish = {
   name: string;
   line: string;
+  ingredients: string[];
+  allergens: string[];
 };
 
 export type Course = {
@@ -76,14 +78,39 @@ export const courses: Course[] = [
       {
         name: "Bruschetta al Pomodoro",
         line: "Tartine cu rosii.",
+        ingredients: [
+          "pane toscano",
+          "rosii cherry",
+          "usturoi",
+          "busuioc",
+          "ulei de masline extravirgin",
+          "sare gema",
+        ],
+        allergens: ["gluten"],
       },
       {
         name: "Burrata & Basil",
         line: "Branza cu busuioc.",
+        ingredients: [
+          "burrata",
+          "busuioc proaspat",
+          "ulei de masline extravirgin",
+          "piper negru",
+          "sare floare",
+        ],
+        allergens: ["lapte"],
       },
       {
         name: "Affettati della Casa",
         line: "Mezeluri tata.",
+        ingredients: [
+          "prosciutto crudo",
+          "finocchiona",
+          "salame toscano",
+          "pecorino",
+          "olive",
+        ],
+        allergens: ["lapte"],
       },
     ],
   },
@@ -99,14 +126,42 @@ export const courses: Course[] = [
       {
         name: "Carbonara Monumentale",
         line: "D alea adevarate brother nu cu smantana sau alte nebunii, i auzi sunca bacon, c avetz ma.",
+        ingredients: [
+          "spaghetti",
+          "guanciale",
+          "galbenusuri",
+          "pecorino romano",
+          "piper negru",
+        ],
+        allergens: ["gluten", "oua", "lapte"],
       },
       {
         name: "Pici all’Aglione",
         line: "Rosii tata, nu asa, rosii.",
+        ingredients: [
+          "pici (pasta frageda)",
+          "aglione della Valdichiana",
+          "rosii pelati",
+          "ulei de masline",
+          "sare",
+          "piper",
+        ],
+        allergens: ["gluten"],
       },
       {
         name: "Lasagna",
         line: "Starturi vere, cate una cate doua cate trei cate patru cate cinci cate sase.",
+        ingredients: [
+          "foi de lasagna",
+          "ragu de vita",
+          "besciamella",
+          "parmigiano reggiano",
+          "mozarella",
+          "ceapa",
+          "morcov",
+          "telina",
+        ],
+        allergens: ["gluten", "lapte", "telina"],
       },
     ],
   },
@@ -122,14 +177,37 @@ export const courses: Course[] = [
       {
         name: "Ricotta montata con miele e noci",
         line: "Branza dulce cu nuci.",
+        ingredients: [
+          "ricotta fresca",
+          "miere de acacia",
+          "nuci",
+          "coaja de lamaie",
+        ],
+        allergens: ["lapte", "nuci"],
       },
       {
         name: "Panna Cotta al Limone",
         line: "Budinca italianca acra.",
+        ingredients: [
+          "frisca",
+          "lapte",
+          "zahar",
+          "gelatina",
+          "lamaie",
+          "vanilie",
+        ],
+        allergens: ["lapte"],
       },
     ],
   },
 ];
+
+export type DrinkItem = {
+  name: string;
+  line: string;
+  ingredients: string[];
+  allergens: string[];
+};
 
 export const drinks = {
   id: "bubuiala",
@@ -140,18 +218,26 @@ export const drinks = {
     {
       name: "Sprit cu aperol",
       line: "De vara mai asa mai amar.",
+      ingredients: ["aperol", "prosecco", "apa minerala", "portocala"],
+      allergens: ["sulfiti"],
     },
     {
       name: "Sprit cu limoncello",
       line: "De vara mai asa mai acru.",
+      ingredients: ["limoncello", "prosecco", "apa minerala", "lamaie"],
+      allergens: ["sulfiti"],
     },
     {
       name: "N*****i",
       line: "Aicea va las pe voi sa ghiciti",
+      ingredients: ["gin", "campari", "vermouth rosso"],
+      allergens: ["sulfiti"],
     },
     {
       name: "N*****i Sbagliato",
       line: "Hai ca v am ajutat oleaca",
+      ingredients: ["prosecco", "campari", "vermouth rosso"],
+      allergens: ["sulfiti"],
     },
-  ],
+  ] satisfies DrinkItem[],
 };
