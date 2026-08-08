@@ -1,11 +1,12 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import ChefLogo from "@/components/ChefLogo";
 import DrinksSection from "@/components/DrinksSection";
+import EndSlideshow from "@/components/EndSlideshow";
 import FaqSection from "@/components/FaqSection";
 import {
   BasilDoodle,
@@ -134,6 +135,7 @@ function CourseSection({ course, index }: { course: Course; index: number }) {
 
 export default function MenuExperience() {
   const rootRef = useRef<HTMLDivElement>(null);
+  const [showFinale, setShowFinale] = useState(false);
 
   useGSAP(
     () => {
@@ -351,11 +353,22 @@ export default function MenuExperience() {
           <p className="mt-6 font-display text-2xl leading-snug text-butter">
             {brand.finaleSub}
           </p>
+
+          <button
+            type="button"
+            onClick={() => setShowFinale(true)}
+            className="mt-10 inline-flex min-h-14 items-center justify-center rounded-full bg-tomato px-8 font-display text-xl text-parchment shadow-[0_8px_0_#6B1F2A] transition-transform active:translate-y-1 active:shadow-[0_4px_0_#6B1F2A]"
+          >
+            End the experience
+          </button>
+
           <p className="mt-10 font-label text-[0.58rem] uppercase tracking-[0.22em] text-parchment/40">
             {brand.marquee}
           </p>
         </div>
       </footer>
+
+      <EndSlideshow open={showFinale} onClose={() => setShowFinale(false)} />
     </div>
   );
 }

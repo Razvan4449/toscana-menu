@@ -177,6 +177,121 @@ body {
   }
 }
 
+@keyframes ppt-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes ppt-wipe-right {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+@keyframes ppt-wipe-up {
+  from {
+    clip-path: inset(100% 0 0 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+@keyframes ppt-zoom-spin {
+  from {
+    opacity: 0;
+    transform: scale(0.4) rotate(-18deg);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+@keyframes ppt-fly-left {
+  from {
+    opacity: 0;
+    transform: translateX(-60%) rotate(-6deg);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) rotate(0deg);
+  }
+}
+
+@keyframes ppt-bounce {
+  0% {
+    opacity: 0;
+    transform: scale(0.2);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.08);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes ppt-flip {
+  from {
+    opacity: 0.2;
+    transform: rotateY(85deg) scale(0.85);
+  }
+  to {
+    opacity: 1;
+    transform: rotateY(0deg) scale(1);
+  }
+}
+
+.animate-ppt-fade {
+  animation: ppt-fade 0.7s ease both;
+}
+
+.animate-ppt-wipe-right {
+  animation: ppt-wipe-right 0.75s ease-out both;
+}
+
+.animate-ppt-wipe-up {
+  animation: ppt-wipe-up 0.75s ease-out both;
+}
+
+.animate-ppt-zoom-spin {
+  animation: ppt-zoom-spin 0.85s cubic-bezier(0.34, 1.4, 0.64, 1) both;
+}
+
+.animate-ppt-fly-left {
+  animation: ppt-fly-left 0.75s ease-out both;
+}
+
+.animate-ppt-bounce {
+  animation: ppt-bounce 0.85s cubic-bezier(0.34, 1.5, 0.64, 1) both;
+}
+
+.animate-ppt-flip {
+  animation: ppt-flip 0.8s ease both;
+  transform-style: preserve-3d;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-ppt-fade,
+  .animate-ppt-wipe-right,
+  .animate-ppt-wipe-up,
+  .animate-ppt-zoom-spin,
+  .animate-ppt-fly-left,
+  .animate-ppt-bounce,
+  .animate-ppt-flip {
+    animation: ppt-fade 0.2s ease both;
+  }
+}
+
 :focus-visible {
   outline: 3px solid var(--amber);
   outline-offset: 3px;
