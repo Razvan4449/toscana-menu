@@ -68,21 +68,21 @@ export const courses: Course[] = [
     number: "01",
     title: "Antipasti",
     italian: "Actul de deschidere",
-    vibe: "Apropia-te cu foame.",
-    note: "Periculos de snackable. Nu termina tot inainte de felul principal — sau termina. Nu suntem parintii tai.",
+    vibe: "Incepem usor, capul plecat sabia nu taie.",
+    note: "",
     tone: "cream",
     dishes: [
       {
         name: "Bruschetta al Pomodoro",
-        line: "Arata inocent. Dispare instant.",
+        line: "Tartine cu rosii.",
       },
       {
         name: "Burrata & Basil",
-        line: "Diplomatia moale, in forma de branza.",
+        line: "Branza cu busuioc.",
       },
       {
         name: "Affettati della Casa",
-        line: "Facut pentru linistea dramatica de la masa.",
+        line: "Mezeluri tata.",
       },
     ],
   },

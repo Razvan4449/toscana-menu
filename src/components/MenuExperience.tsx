@@ -101,12 +101,14 @@ function CourseSection({ course, index }: { course: Course; index: number }) {
             className="js-scribble mx-auto mt-5 w-36"
             color={scribbleColor[course.tone]}
           />
-          <p className={`mx-auto mt-5 max-w-[18rem] font-display text-xl leading-snug ${accent[course.tone]}`}>
+          <p className={`mx-auto mt-5 max-w-[20rem] font-display text-xl leading-snug ${accent[course.tone]}`}>
             {course.vibe}
           </p>
-          <p className={`mx-auto mt-4 max-w-sm text-[0.95rem] leading-relaxed ${muted[course.tone]}`}>
-            {course.note}
-          </p>
+          {course.note ? (
+            <p className={`mx-auto mt-4 max-w-sm text-[0.95rem] leading-relaxed ${muted[course.tone]}`}>
+              {course.note}
+            </p>
+          ) : null}
         </header>
 
         <ul className="mt-12 space-y-0">
