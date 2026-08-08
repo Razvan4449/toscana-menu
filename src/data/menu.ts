@@ -7,10 +7,9 @@ export const brand = {
     "Perla e in vacanta. In toscana. E in Italia. Gen ciubota aia. TUTTO PASSA.",
   edition: "Perla e in vacanta — Toscana Edition",
   overviewTitle: "Meniul serii",
-  overviewBody:
-    "Mic meniu, ambitie mare. Pregatit cu curaj si supraveghere limitata.",
+  overviewBody: "Mic meniu, ambitie mare, sper ca v-ati EDIficat.",
   cta: "Deschide meniul",
-  chefQuote: "Perla e oficial in vacanta. Toscana sa tremure putin.",
+  chefQuote: "Niciodata candva\nS a intamplat sa nu fie\nVreodata undeva candva.",
   finaleLabel: "Serviciu incheiat",
   finaleTitle: "Buon appetito",
   finaleLine: "Perla a aterizat in Toscana.",

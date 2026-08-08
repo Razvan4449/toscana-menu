@@ -297,7 +297,7 @@ export default function MenuExperience() {
       <section className="border-y border-espresso/10 bg-toasted/60 px-5 py-10 sm:px-8">
         <div className="js-reveal mx-auto flex max-w-lg items-center gap-4">
           <ChefLogo size="sm" className="shrink-0" />
-          <p className="font-display text-xl leading-snug text-espresso sm:text-2xl">
+          <p className="whitespace-pre-line font-display text-xl leading-snug text-espresso sm:text-2xl">
             “{brand.chefQuote}”
           </p>
         </div>
