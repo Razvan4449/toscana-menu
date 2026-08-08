@@ -170,7 +170,7 @@ export const courses: Course[] = [
     number: "03",
     title: "Dessert",
     italian: "Finalul dulce, evident",
-    vibe: "Emotional necesar.",
+    vibe: "Cand cineva va greseste sa aveti mereu in cap ca: eu DES IERT.",
     note: "",
     tone: "olive",
     dishes: [
