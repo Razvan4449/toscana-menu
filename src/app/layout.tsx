@@ -15,12 +15,12 @@ const sans = Nunito({
 });
 
 export const metadata: Metadata = {
-  title: "VASILIU’S — Moldavian Pearl · Tuscany Edition",
+  title: "VASILIU’S — Perla e in vacanta · Toscana",
   description:
-    "MOLDAVIAN PEARL IS ON THE MOVE — TUSCANY EDITION. A goofy theatrical Tuscan dinner menu by VASILIU’S.",
+    "Capu jos Toscana s-a dat drumu la brate. Meniu digital VASILIU’S — TUTTO PASSA.",
   openGraph: {
-    title: "VASILIU’S — Tuscany Edition",
-    description: "MOLDAVIAN PEARL IS ON THE MOVE — TUSCANY EDITION",
+    title: "VASILIU’S — Toscana Edition",
+    description: "Perla e in vacanta. In toscana. E in Italia. Gen ciubota aia. TUTTO PASSA.",
     type: "website",
   },
 };
@@ -34,7 +34,7 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
-      lang="en"
+      lang="ro"
       className={`${display.variable} ${sans.variable} h-full antialiased`}
     >
       <body className="min-h-full font-sans text-espresso">{children}</body>

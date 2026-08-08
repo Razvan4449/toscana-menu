@@ -23,13 +23,12 @@ function EditionRibbon({ className = "" }: { className?: string }) {
   return (
     <div
       className={`overflow-hidden border-y-2 border-amber/50 bg-wine ${className}`}
-      aria-label={brand.edition}
+      aria-label={brand.marquee}
     >
-      <div className="edition-marquee gap-10 py-3 font-label text-[0.68rem] uppercase tracking-[0.28em] text-amber sm:text-[0.72rem]">
+      <div className="edition-marquee gap-10 py-3 font-label text-[0.68rem] uppercase tracking-[0.22em] text-amber sm:text-[0.72rem]">
         {Array.from({ length: 4 }).map((_, i) => (
           <span key={i} className="flex shrink-0 items-center gap-10 whitespace-nowrap px-2">
-            <span>★ {brand.edition} ★</span>
-            <span className="text-parchment/70">Tuscan edition activated</span>
+            <span>★ {brand.marquee} ★</span>
           </span>
         ))}
       </div>
@@ -199,7 +198,7 @@ export default function MenuExperience() {
 
         <div className="relative z-10 flex items-center justify-between px-5 pt-[max(1.1rem,env(safe-area-inset-top))] sm:px-8">
           <p className="js-hero-item font-label text-[0.62rem] uppercase tracking-[0.3em] text-amber">
-            Tonight only
+            {brand.established}
           </p>
           <div className="flex gap-1.5">
             {Array.from({ length: 5 }).map((_, i) => (
@@ -219,16 +218,12 @@ export default function MenuExperience() {
             <ChefLogo size="hero" priority className="mx-auto max-w-[72vw]" />
           </div>
 
-          <p className="js-hero-item mt-1 font-label text-[0.68rem] uppercase tracking-[0.38em] text-amber">
-            Very serious food business
-          </p>
-          <h1 className="js-hero-item mt-3 font-display text-[clamp(3rem,15vw,5.5rem)] leading-[0.88] tracking-[-0.03em]">
-            {brand.name}
-          </h1>
-          <p className="js-hero-item mt-4 max-w-[16rem] font-display text-2xl leading-snug text-butter sm:max-w-sm sm:text-3xl">
+          <h1 className="sr-only">{brand.name}</h1>
+
+          <p className="js-hero-item mt-5 max-w-[18rem] font-display text-[1.65rem] leading-snug text-butter sm:max-w-md sm:text-[2rem]">
             {brand.heroLine}
           </p>
-          <p className="js-hero-item mt-4 max-w-xs text-sm leading-relaxed text-parchment/65">
+          <p className="js-hero-item mt-4 max-w-xs text-sm leading-relaxed text-parchment/65 sm:max-w-sm sm:text-base">
             {brand.heroSub}
           </p>
 
@@ -236,7 +231,7 @@ export default function MenuExperience() {
             href="#menu"
             className="js-hero-item mt-9 inline-flex min-h-12 items-center gap-3 rounded-full border border-amber/40 bg-wine/80 px-6 font-label text-[0.68rem] uppercase tracking-[0.28em] text-amber transition-transform active:scale-[0.98]"
           >
-            Open the menu
+            {brand.cta}
             <span aria-hidden className="h-px w-8 bg-amber/70" />
           </a>
         </div>
@@ -253,7 +248,7 @@ export default function MenuExperience() {
         <div className="js-reveal mx-auto max-w-lg text-center">
           <div className="inline-flex max-w-full flex-col items-center rounded-[1.5rem] border-2 border-dashed border-terracotta/50 bg-butter/70 px-5 py-5 shadow-[0_10px_0_rgba(158,59,42,0.1)]">
             <p className="font-label text-[0.62rem] uppercase tracking-[0.32em] text-wine">
-              Special edition
+              Editie speciala
             </p>
             <p className="mt-3 font-display text-[1.35rem] leading-snug tracking-[-0.02em] text-espresso sm:text-[1.55rem]">
               {brand.edition}
@@ -302,7 +297,7 @@ export default function MenuExperience() {
         <div className="js-reveal mx-auto flex max-w-lg items-center gap-4">
           <ChefLogo size="sm" className="shrink-0" />
           <p className="font-display text-xl leading-snug text-espresso sm:text-2xl">
-            “Moldavian Pearl is officially on the move. Tuscany should be nervous.”
+            “{brand.chefQuote}”
           </p>
         </div>
       </section>
@@ -319,19 +314,19 @@ export default function MenuExperience() {
         <div className="js-reveal mx-auto flex max-w-lg flex-col items-center">
           <ChefLogo size="lg" />
           <p className="mt-5 font-label text-[0.65rem] uppercase tracking-[0.34em] text-amber">
-            Service complete
+            {brand.finaleLabel}
           </p>
           <h2 className="mt-3 font-display text-[clamp(2.6rem,12vw,4rem)] leading-none">
-            Buon appetito
+            {brand.finaleTitle}
           </h2>
           <p className="mt-4 max-w-xs font-display text-lg leading-snug text-butter">
-            Moldavian Pearl has landed in Tuscany.
+            {brand.finaleLine}
           </p>
           <p className="mt-3 max-w-sm text-sm leading-relaxed text-parchment/60">
-            See you at the table. Bring hunger, leave dignity at the door.
+            {brand.finaleSub}
           </p>
-          <p className="mt-10 font-label text-[0.58rem] uppercase tracking-[0.26em] text-parchment/40">
-            {brand.edition}
+          <p className="mt-10 font-label text-[0.58rem] uppercase tracking-[0.22em] text-parchment/40">
+            {brand.marquee}
           </p>
         </div>
       </footer>

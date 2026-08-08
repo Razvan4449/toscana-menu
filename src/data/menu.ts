@@ -1,11 +1,20 @@
 export const brand = {
   name: "VASILIU’S",
-  edition: "MOLDAVIAN PEARL IS ON THE MOVE — TUSCANY EDITION",
-  heroLine: "A questionable level of elegance.",
-  heroSub: "One table. Too much confidence. Tuscan nonsense, served properly.",
-  overviewTitle: "Tonight’s unnecessary level of excellence",
+  established: "Est. 09.08.2026",
+  heroLine: "Capu jos Toscana s-a dat drumu la brate.",
+  heroSub: "Cand masa e plina de prieteni mancare nici nu conteaza.",
+  marquee:
+    "Perla e in vacanta. In toscana. E in Italia. Gen ciubota aia. TUTTO PASSA.",
+  edition: "Perla e in vacanta — Toscana Edition",
+  overviewTitle: "Meniul serii",
   overviewBody:
-    "A tiny menu with huge ambition — prepared with courage and limited supervision.",
+    "Mic meniu, ambitie mare. Pregatit cu curaj si supraveghere limitata.",
+  cta: "Deschide meniul",
+  chefQuote: "Perla e oficial in vacanta. Toscana sa tremure putin.",
+  finaleLabel: "Serviciu incheiat",
+  finaleTitle: "Buon appetito",
+  finaleLine: "Perla a aterizat in Toscana.",
+  finaleSub: "Ne vedem la masa. Foamea da, demnitatea nu e obligatorie.",
 };
 
 export type Dish = {
@@ -29,22 +38,22 @@ export const courses: Course[] = [
     id: "antipasti",
     number: "01",
     title: "Antipasti",
-    italian: "The opening act",
-    vibe: "Approach with hunger.",
-    note: "Dangerously snackable energy. Do not finish before the main arrives — or do. We are not your parents.",
+    italian: "Actul de deschidere",
+    vibe: "Apropia-te cu foame.",
+    note: "Periculos de snackable. Nu termina tot inainte de felul principal — sau termina. Nu suntem parintii tai.",
     tone: "cream",
     dishes: [
       {
         name: "Bruschetta al Pomodoro",
-        line: "Looks innocent. Disappears instantly.",
+        line: "Arata inocent. Dispare instant.",
       },
       {
         name: "Burrata & Basil",
-        line: "Soft diplomacy in cheese form.",
+        line: "Diplomatia moale, in forma de branza.",
       },
       {
         name: "Affettati della Casa",
-        line: "Built for dramatic table silence.",
+        line: "Facut pentru linistea dramatica de la masa.",
       },
     ],
   },
@@ -52,22 +61,22 @@ export const courses: Course[] = [
     id: "main",
     number: "02",
     title: "Main",
-    italian: "The dramatic centerpiece",
-    vibe: "This course has main character energy.",
-    note: "Very serious food business. Certified villa behavior.",
+    italian: "Protagonistul serii",
+    vibe: "Felul asta are main character energy.",
+    note: "Business foarte serios cu mancarea. Comportament de villa certificat.",
     tone: "wine",
     dishes: [
       {
         name: "Carbonara Monumentale",
-        line: "No cream. No fear. Only destiny.",
+        line: "Fara smantana. Fara frica. Doar destin.",
       },
       {
         name: "Tagliata di Manzo",
-        line: "Too elegant for the chaos around it.",
+        line: "Prea elegant pentru haosul din jur.",
       },
       {
         name: "Contorno del Giorno",
-        line: "The supporting actor that steals scenes.",
+        line: "Actorul secundar care fura scena.",
       },
     ],
   },
@@ -75,22 +84,22 @@ export const courses: Course[] = [
     id: "dessert",
     number: "03",
     title: "Dessert",
-    italian: "The sweet finale, obviously",
-    vibe: "Emotionally necessary.",
-    note: "A special edition nobody asked for, but everyone needed.",
+    italian: "Finalul dulce, evident",
+    vibe: "Emotional necesar.",
+    note: "O editie speciala pe care nimeni n-a cerut-o, dar toti o voiau.",
     tone: "olive",
     dishes: [
       {
         name: "Panna Cotta al Limone",
-        line: "Soft, smug, and perfectly chilled.",
+        line: "Moale, aroganta si perfect rece.",
       },
       {
         name: "Cantucci & Vin Santo",
-        line: "Dip, dunk, become legendary.",
+        line: "Inmoi, inmoi iar, devii legenda.",
       },
       {
         name: "Espresso della Casa",
-        line: "For courage after the pasta.",
+        line: "Curaj dupa pasta.",
       },
     ],
   },
