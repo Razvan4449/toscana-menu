@@ -115,20 +115,16 @@ export const courses: Course[] = [
     title: "Dessert",
     italian: "Finalul dulce, evident",
     vibe: "Emotional necesar.",
-    note: "O editie speciala pe care nimeni n-a cerut-o, dar toti o voiau.",
+    note: "",
     tone: "olive",
     dishes: [
       {
+        name: "Ricotta montata con miele e noci",
+        line: "Branza dulce cu nuci.",
+      },
+      {
         name: "Panna Cotta al Limone",
-        line: "Moale, aroganta si perfect rece.",
-      },
-      {
-        name: "Cantucci & Vin Santo",
-        line: "Inmoi, inmoi iar, devii legenda.",
-      },
-      {
-        name: "Espresso della Casa",
-        line: "Curaj dupa pasta.",
+        line: "Budinca italianca acra.",
       },
     ],
   },
