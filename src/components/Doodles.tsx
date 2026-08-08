@@ -115,12 +115,18 @@ export function WineDoodle({ className = "" }: { className?: string }) {
   );
 }
 
-export function ScribbleLine({ className = "" }: { className?: string }) {
+export function ScribbleLine({
+  className = "",
+  color = "#C45C3E",
+}: {
+  className?: string;
+  color?: string;
+}) {
   return (
     <svg className={className} viewBox="0 0 200 12" fill="none" aria-hidden>
       <path
         d="M2 8c30-8 50 4 80-2s50 6 80-2 30 4 36 2"
-        stroke="#C45C3E"
+        stroke={color}
         strokeWidth="2.5"
         strokeLinecap="round"
         className="scribble-stroke"

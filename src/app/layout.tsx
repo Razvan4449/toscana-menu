@@ -1,6 +1,5 @@
 import type { Metadata, Viewport } from "next";
 import { Fraunces, Nunito } from "next/font/google";
-import BottomNav from "@/components/BottomNav";
 import "./globals.css";
 
 const display = Fraunces({
@@ -16,13 +15,12 @@ const sans = Nunito({
 });
 
 export const metadata: Metadata = {
-  title: "VASILIU’S — Una Cena in Toscana",
+  title: "VASILIU’S — Moldavian Pearl · Tuscany Edition",
   description:
-    "A goofy cinematic Tuscan dinner menu for friends on vacation: courses, shopping list, timeline, and cooking mode.",
+    "MOLDAVIAN PEARL IS ON THE MOVE — TUSCANY EDITION. A goofy theatrical Tuscan dinner menu by VASILIU’S.",
   openGraph: {
-    title: "VASILIU’S — Una Cena in Toscana",
-    description:
-      "11 amici · un tavolo · troppo cibo. The weirdest best trattoria dinner night.",
+    title: "VASILIU’S — Tuscany Edition",
+    description: "MOLDAVIAN PEARL IS ON THE MOVE — TUSCANY EDITION",
     type: "website",
   },
 };
@@ -39,10 +37,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${display.variable} ${sans.variable} h-full antialiased`}
     >
-      <body className="paper-texture min-h-full font-sans text-espresso">
-        {children}
-        <BottomNav />
-      </body>
+      <body className="min-h-full font-sans text-espresso">{children}</body>
     </html>
   );
 }

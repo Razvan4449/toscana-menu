@@ -1,9 +1,10 @@
 @import "tailwindcss";
 
 :root {
-  --parchment: #f3e6d0;
-  --toasted: #e8d4b8;
-  --butter: #f6e7b8;
+  --parchment: #f4e8d4;
+  --cream: #faf3e6;
+  --toasted: #e6d3b5;
+  --butter: #f7e6b4;
   --terracotta: #c45c3e;
   --sienna: #9e3b2a;
   --tomato: #d63b2f;
@@ -15,14 +16,19 @@
   --amber: #f0c14a;
   --espresso: #2c2118;
   --night: #1a0e12;
-  --background: var(--parchment);
-  --foreground: var(--espresso);
+  --space-1: 0.5rem;
+  --space-2: 0.75rem;
+  --space-3: 1rem;
+  --space-4: 1.5rem;
+  --space-5: 2rem;
+  --space-6: 3rem;
+  --space-7: 4.5rem;
+  --space-8: 6rem;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
   --color-parchment: var(--parchment);
+  --color-cream: var(--cream);
   --color-toasted: var(--toasted);
   --color-butter: var(--butter);
   --color-terracotta: var(--terracotta);
@@ -50,49 +56,102 @@ html {
 }
 
 body {
-  background: var(--parchment);
-  color: var(--espresso);
+  margin: 0;
   min-height: 100%;
   overflow-x: hidden;
+  background: var(--parchment);
+  color: var(--espresso);
   font-family: var(--font-sans);
 }
 
 ::selection {
-  background: rgba(198, 92, 62, 0.28);
+  background: rgba(198, 92, 62, 0.3);
   color: var(--espresso);
 }
 
-.paper-texture {
-  background-image:
-    radial-gradient(ellipse at 20% 10%, rgba(246, 231, 184, 0.55), transparent 45%),
-    radial-gradient(ellipse at 90% 30%, rgba(196, 92, 62, 0.08), transparent 40%),
-    linear-gradient(180deg, rgba(243, 230, 208, 0.95), rgba(232, 212, 184, 0.9));
+.site-shell {
+  background:
+    radial-gradient(ellipse at 15% 0%, rgba(246, 231, 184, 0.55), transparent 42%),
+    radial-gradient(ellipse at 100% 20%, rgba(196, 92, 62, 0.1), transparent 36%),
+    linear-gradient(180deg, #faf3e6 0%, #f4e8d4 40%, #ead9bf 100%);
 }
 
-.btn-wobble:hover {
-  animation: wobble 0.55s ease;
+.grain {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  opacity: 0.035;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
-@keyframes wobble {
+.edition-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 22s linear infinite;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes bulb-pulse {
   0%,
   100% {
-    transform: rotate(0deg);
-  }
-  25% {
-    transform: rotate(-1.4deg) scale(1.01);
+    opacity: 0.55;
+    transform: scale(0.92);
   }
   50% {
-    transform: rotate(1.2deg);
-  }
-  75% {
-    transform: rotate(-0.6deg);
+    opacity: 1;
+    transform: scale(1);
   }
 }
 
-.pasta-stroke,
+.bulb {
+  animation: bulb-pulse 1.8s ease-in-out infinite;
+}
+
+.bulb:nth-child(2n) {
+  animation-delay: 0.25s;
+}
+
+.bulb:nth-child(3n) {
+  animation-delay: 0.5s;
+}
+
+@keyframes floaty {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-4deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(3deg);
+  }
+}
+
+.floaty {
+  animation: floaty 4.5s ease-in-out infinite;
+}
+
 .scribble-stroke {
-  stroke-dasharray: 220;
-  stroke-dashoffset: 0;
+  stroke-dasharray: 240;
+  stroke-dashoffset: 240;
+}
+
+.scribble-stroke.is-drawn {
+  animation: draw-scribble 1s ease forwards;
+}
+
+@keyframes draw-scribble {
+  to {
+    stroke-dashoffset: 0;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -100,25 +159,19 @@ body {
     scroll-behavior: auto;
   }
 
-  .btn-wobble:hover {
+  .edition-marquee,
+  .bulb,
+  .floaty {
     animation: none;
   }
 
-  .js-bulb,
-  .js-hero-logo,
-  .js-hero-title,
-  .js-hero-sub,
-  .js-hero-cta,
-  .js-chapter,
-  .js-course-head,
-  .js-ingredient,
-  .js-step,
-  .js-beat,
-  .js-finale,
-  .js-shop-head,
-  .js-shop-group,
-  .js-splash-logo,
-  .js-splash-text {
+  .scribble-stroke {
+    stroke-dashoffset: 0;
+  }
+
+  .js-reveal,
+  .js-dish,
+  .js-hero-item {
     opacity: 1 !important;
     transform: none !important;
   }

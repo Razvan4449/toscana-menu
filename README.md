@@ -1,17 +1,10 @@
 # VASILIU’S
 
-A mobile-first, animated Tuscan dinner experience for a private vacation feast among friends.
+Mobile-first digital menu for **MOLDAVIAN PEARL IS ON THE MOVE — TUSCANY EDITION**.
 
-## Scripts
+A theatrical, goofy Tuscan trattoria menu experience — menu only, no recipe utility.
 
 ```bash
 npm install
 npm run dev
-npm run build
 ```
-
-## Routes
-
-- `/` — cinematic menu journey
-- `/cooking` — kitchen cooking mode
-- `/shopping` — checklist with localStorage
