@@ -254,6 +254,13 @@ export default function MenuExperience() {
 
           <a
             href="#menu"
+            onClick={(e) => {
+              e.preventDefault();
+              document.getElementById("menu")?.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+              });
+            }}
             className="js-hero-item mt-9 inline-flex min-h-12 items-center gap-3 rounded-full border border-amber/40 bg-wine/80 px-6 font-label text-[0.68rem] uppercase tracking-[0.28em] text-amber transition-transform active:scale-[0.98]"
           >
             {brand.cta}
