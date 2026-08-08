@@ -5,7 +5,7 @@ export const brand = {
   heroSub: "Cand masa e plina de prieteni mancarea nici nu conteaza.",
   marquee:
     "Perla e in vacanta. In toscana. E in Italia. Gen ciubota aia. TUTTO PASSA.",
-  edition: "Perla e in vacanta — Toscana Edition",
+  edition: "Perla e in vacanta Toscana Edition",
   overviewTitle: "Meniul serii",
   overviewBody: "Mic meniu, ambitie mare, sper ca v-ati EDIficat.",
   cta: "Deschide meniul",
