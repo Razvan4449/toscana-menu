@@ -2,7 +2,7 @@ export const brand = {
   name: "VASILIU’S",
   established: "Est. 09.08.2026",
   heroLine: "Capu jos Toscana s-a dat drumu la brate.",
-  heroSub: "Cand masa e plina de prieteni mancare nici nu conteaza.",
+  heroSub: "Cand masa e plina de prieteni mancarea nici nu conteaza.",
   marquee:
     "Perla e in vacanta. In toscana. E in Italia. Gen ciubota aia. TUTTO PASSA.",
   edition: "Perla e in vacanta — Toscana Edition",
