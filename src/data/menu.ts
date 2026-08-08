@@ -15,6 +15,10 @@ export const brand = {
   finaleLine:
     "Acesta experienta a fost gandita, creata, dibuita, nascocita, implementata, rumenita si desavarsita de RAZVAN ANDREI VASILIU CNP: 1209338209, COD CAYENNE: 0000001, 1,76m , 25 ani, marime papuc: 43 , fan redbull, audi, aston martin, cadillac, ferrari, redbull, audi.",
   finaleSub: "Ma inclin.",
+  chefButton: "Despre Chef",
+  chefPageTitle: "Chef Vasiliu",
+  chefBio:
+    "Experienta te nasti cu ea nu se capata. Dintre cele mai mari bucatarii alea lumii Est-Vestice a celor mai bune hoteluri de 7 stele cazatoare, castigator al bileleor de aur si co starul shoului ACEL URS, gateste cu maiestrie, grija si atentie la neatentie. Cateodata preparatul e despre preparat. si atat. in rest e doar vorba.",
 };
 
 export const faq = [

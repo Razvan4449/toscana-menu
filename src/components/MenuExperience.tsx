@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useState } from "react";
+import Link from "next/link";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -372,13 +373,21 @@ export default function MenuExperience() {
             {brand.finaleSub}
           </p>
 
-          <button
-            type="button"
-            onClick={() => setShowFinale(true)}
-            className="mt-10 inline-flex min-h-14 items-center justify-center rounded-full bg-tomato px-8 font-display text-xl text-parchment shadow-[0_8px_0_#6B1F2A] transition-transform active:translate-y-1 active:shadow-[0_4px_0_#6B1F2A]"
-          >
-            End the experience
-          </button>
+          <div className="mt-10 flex w-full max-w-sm flex-col gap-3">
+            <Link
+              href="/chef"
+              className="inline-flex min-h-14 items-center justify-center rounded-full border-2 border-amber/50 bg-transparent px-8 font-display text-xl text-amber transition-transform active:scale-[0.98]"
+            >
+              {brand.chefButton}
+            </Link>
+            <button
+              type="button"
+              onClick={() => setShowFinale(true)}
+              className="inline-flex min-h-14 items-center justify-center rounded-full bg-tomato px-8 font-display text-xl text-parchment shadow-[0_8px_0_#6B1F2A] transition-transform active:translate-y-1 active:shadow-[0_4px_0_#6B1F2A]"
+            >
+              End the experience
+            </button>
+          </div>
 
           <p className="mt-10 font-label text-[0.58rem] uppercase tracking-[0.22em] text-parchment/40">
             {brand.marquee}
