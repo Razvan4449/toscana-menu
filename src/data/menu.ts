@@ -17,6 +17,36 @@ export const brand = {
   finaleSub: "Ne vedem la masa. Foamea da, demnitatea nu e obligatorie.",
 };
 
+export const faq = [
+  {
+    id: "festin",
+    question: "Ce va recomanda pentru a dirija asemenea festin?",
+    answer: "Bai tata mancarea n o inveti o faci.",
+    type: "text" as const,
+  },
+  {
+    id: "forte",
+    question: "Punctul forte al acestui establishment:",
+    answer: "Daca iese e bine. Daca nu iese e bine.",
+    type: "text" as const,
+  },
+  {
+    id: "castiga",
+    question: "Cine va castiga in aceasta seara?",
+    type: "vote" as const,
+    options: [
+      { id: "dacii", label: "Dacii" },
+      { id: "samuraii", label: "Samuraii" },
+    ],
+  },
+  {
+    id: "trupe",
+    question: "Cate trupe au cantat pe scena in aceasta seara?",
+    answer: "3 in pula mea",
+    type: "text" as const,
+  },
+];
+
 export type Dish = {
   name: string;
   line: string;

@@ -5,6 +5,7 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import ChefLogo from "@/components/ChefLogo";
+import FaqSection from "@/components/FaqSection";
 import {
   BasilDoodle,
   OliveDoodle,
@@ -305,6 +306,8 @@ export default function MenuExperience() {
       {courses.map((course, index) => (
         <CourseSection key={course.id} course={course} index={index} />
       ))}
+
+      <FaqSection />
 
       {/* ENDING */}
       <footer className="relative overflow-hidden bg-night px-5 pb-[max(3rem,env(safe-area-inset-bottom))] pt-16 text-center text-parchment sm:px-8 sm:pt-20">
