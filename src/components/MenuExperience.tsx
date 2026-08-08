@@ -5,6 +5,7 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import ChefLogo from "@/components/ChefLogo";
+import DrinksSection from "@/components/DrinksSection";
 import FaqSection from "@/components/FaqSection";
 import {
   BasilDoodle,
@@ -16,7 +17,7 @@ import {
   TomatoDoodle,
   WineDoodle,
 } from "@/components/Doodles";
-import { brand, courses, type Course } from "@/data/menu";
+import { brand, courses, drinks, type Course } from "@/data/menu";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
@@ -291,6 +292,24 @@ export default function MenuExperience() {
                 </a>
               </li>
             ))}
+            <li>
+              <a
+                href={`#${drinks.id}`}
+                className="flex min-h-16 items-center justify-between gap-4 rounded-2xl border-2 border-espresso/10 bg-cream/80 px-4 py-4 transition-transform active:scale-[0.99]"
+              >
+                <span>
+                  <span className="block font-label text-[0.6rem] uppercase tracking-[0.28em] text-terracotta">
+                    {drinks.number}
+                  </span>
+                  <span className="mt-1 block font-display text-2xl leading-none text-espresso">
+                    {drinks.title}
+                  </span>
+                </span>
+                <span className="max-w-[7.5rem] text-right text-sm leading-snug text-espresso/55">
+                  La pahar
+                </span>
+              </a>
+            </li>
           </ol>
         </div>
       </section>
@@ -308,6 +327,8 @@ export default function MenuExperience() {
       {courses.map((course, index) => (
         <CourseSection key={course.id} course={course} index={index} />
       ))}
+
+      <DrinksSection />
 
       <FaqSection />
 

@@ -129,3 +129,28 @@ export const courses: Course[] = [
     ],
   },
 ];
+
+export const drinks = {
+  id: "bubuiala",
+  number: "04",
+  title: "Bubuiala",
+  heading: "Recomandarea de bubuiala la aceasta masa:",
+  items: [
+    {
+      name: "Sprit cu aperol",
+      line: "De vara mai asa mai amar.",
+    },
+    {
+      name: "Sprit cu limoncello",
+      line: "De vara mai asa mai acru.",
+    },
+    {
+      name: "N*****i",
+      line: "Aicea va las pe voi sa ghiciti",
+    },
+    {
+      name: "N*****i Sbagliato",
+      line: "Hai ca v am ajutat oleaca",
+    },
+  ],
+};
