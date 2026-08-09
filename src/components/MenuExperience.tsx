@@ -1,7 +1,6 @@
 "use client";
 
 import { useRef, useState } from "react";
-import Link from "next/link";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -9,7 +8,7 @@ import ChefLogo from "@/components/ChefLogo";
 import DrinksSection from "@/components/DrinksSection";
 import EndSlideshow from "@/components/EndSlideshow";
 import FaqSection from "@/components/FaqSection";
-import StoryFrameDownload from "@/components/StoryFrameDownload";
+import FinaleNav from "@/components/FinaleNav";
 import {
   BasilDoodle,
   OliveDoodle,
@@ -209,13 +208,13 @@ export default function MenuExperience() {
           {
             y: 36,
             opacity: 0,
-            rotation: () => gsap.utils.random(-4, 4),
             stagger: 0.09,
             duration: 0.75,
             ease: "back.out(1.6)",
           },
           0.35,
         )
+        .set(".js-hero-cta", { clearProps: "transform" })
         .from(
           ".js-hero-spark",
           {
@@ -364,7 +363,7 @@ export default function MenuExperience() {
                 block: "start",
               });
             }}
-            className="js-hero-item mt-9 inline-flex min-h-12 items-center gap-3 rounded-full border border-amber/40 bg-wine/80 px-6 font-label text-[0.68rem] uppercase tracking-[0.28em] text-amber transition-transform active:scale-[0.98]"
+            className="js-hero-item js-hero-cta mt-9 inline-flex min-h-12 items-center gap-3 rounded-full border border-amber/40 bg-wine/80 px-6 font-label text-[0.68rem] uppercase tracking-[0.28em] text-amber transition-transform active:scale-[0.98]"
           >
             {brand.cta}
             <span aria-hidden className="h-px w-8 bg-amber/70" />
@@ -483,21 +482,15 @@ export default function MenuExperience() {
             {brand.finaleSub}
           </p>
 
-          <div className="mt-10 flex w-full max-w-sm flex-col gap-3">
-            <Link
-              href="/chef"
-              className="inline-flex min-h-14 items-center justify-center rounded-full border-2 border-amber/50 bg-transparent px-8 font-display text-xl text-amber transition-transform active:scale-[0.98]"
-            >
-              {brand.chefButton}
-            </Link>
+          <div className="mt-10 flex w-full max-w-sm flex-col items-center gap-3">
+            <FinaleNav />
             <button
               type="button"
               onClick={() => setShowFinale(true)}
-              className="inline-flex min-h-14 items-center justify-center rounded-full bg-tomato px-8 font-display text-xl text-parchment shadow-[0_8px_0_#6B1F2A] transition-transform active:translate-y-1 active:shadow-[0_4px_0_#6B1F2A]"
+              className="inline-flex min-h-14 w-full items-center justify-center rounded-full bg-tomato px-8 font-display text-xl text-parchment shadow-[0_8px_0_#6B1F2A] transition-transform active:translate-y-1 active:shadow-[0_4px_0_#6B1F2A]"
             >
               End the experience
             </button>
-            <StoryFrameDownload />
           </div>
 
           <p className="mt-8 font-label text-[0.58rem] uppercase tracking-[0.22em] text-parchment/40">

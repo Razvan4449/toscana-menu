@@ -53,15 +53,16 @@ export default function StoryFrameDownload() {
   }
 
   return (
-    <div className="w-full max-w-sm">
-      <div className="mx-auto mb-4 w-[7.5rem] overflow-hidden rounded-xl border border-amber/35 bg-[linear-gradient(160deg,#3a2030_0%,#1a0e12_55%,#2c2118_100%)] p-2 shadow-[0_10px_30px_rgba(0,0,0,0.35)]">
+    <div className="mx-auto w-full max-w-sm">
+      <div className="mx-auto mb-6 w-[11rem] overflow-hidden rounded-2xl border border-amber/35 bg-[linear-gradient(160deg,#3a2030_0%,#1a0e12_55%,#2c2118_100%)] p-3 shadow-[0_14px_36px_rgba(0,0,0,0.4)] sm:w-[13rem]">
         <div className="relative aspect-[9/16] w-full">
           <Image
             src={FRAME_SRC}
             alt="Preview frame Instagram VASILIU’S"
             fill
-            sizes="120px"
+            sizes="208px"
             className="object-contain"
+            priority
           />
         </div>
       </div>
