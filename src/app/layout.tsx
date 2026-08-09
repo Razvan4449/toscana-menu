@@ -37,7 +37,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="ro"
       className={`${display.variable} ${sans.variable} h-full antialiased`}
     >
-      <body className="min-h-full font-sans text-espresso">{children}</body>
+      <body className="min-h-full bg-night font-sans text-espresso">{children}</body>
     </html>
   );
 }

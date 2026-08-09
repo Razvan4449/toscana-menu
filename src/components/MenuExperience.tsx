@@ -9,6 +9,7 @@ import ChefLogo from "@/components/ChefLogo";
 import DrinksSection from "@/components/DrinksSection";
 import EndSlideshow from "@/components/EndSlideshow";
 import FaqSection from "@/components/FaqSection";
+import StoryFrameDownload from "@/components/StoryFrameDownload";
 import {
   BasilDoodle,
   OliveDoodle,
@@ -318,7 +319,7 @@ export default function MenuExperience() {
   );
 
   return (
-    <div ref={rootRef} className="site-shell relative min-h-screen">
+    <div ref={rootRef} className="site-shell relative">
       <div className="grain" aria-hidden />
 
       {/* HERO */}
@@ -496,9 +497,10 @@ export default function MenuExperience() {
             >
               End the experience
             </button>
+            <StoryFrameDownload />
           </div>
 
-          <p className="mt-10 font-label text-[0.58rem] uppercase tracking-[0.22em] text-parchment/40">
+          <p className="mt-8 font-label text-[0.58rem] uppercase tracking-[0.22em] text-parchment/40">
             {brand.marquee}
           </p>
         </div>
