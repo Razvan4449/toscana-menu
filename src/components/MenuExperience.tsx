@@ -334,7 +334,7 @@ export default function MenuExperience() {
             {Array.from({ length: 5 }).map((_, i) => (
               <span
                 key={i}
-                className="bulb h-2 w-2 rounded-full bg-amber shadow-[0_0_10px_rgba(240,193,74,0.9)]"
+                className="bulb h-1.5 w-1.5 rounded-full bg-amber/80 shadow-[0_0_6px_rgba(240,193,74,0.4)]"
               />
             ))}
           </div>
