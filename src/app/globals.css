@@ -104,57 +104,27 @@ body {
 @keyframes bulb-pulse {
   0%,
   100% {
-    opacity: 0.35;
-    transform: scale(0.85);
-    box-shadow: 0 0 6px rgba(240, 193, 74, 0.4);
+    opacity: 0.72;
+    transform: scale(0.98);
+    box-shadow: 0 0 6px rgba(240, 193, 74, 0.35);
   }
-  40% {
+  50% {
     opacity: 1;
-    transform: scale(1.15);
-    box-shadow: 0 0 14px rgba(240, 193, 74, 1);
-  }
-  55% {
-    opacity: 0.5;
-    transform: scale(0.9);
-  }
-  70% {
-    opacity: 1;
-    transform: scale(1.08);
-    box-shadow: 0 0 12px rgba(240, 193, 74, 0.95);
+    transform: scale(1);
+    box-shadow: 0 0 9px rgba(240, 193, 74, 0.55);
   }
 }
 
 .bulb {
-  animation: bulb-pulse 1.1s ease-in-out infinite;
+  animation: bulb-pulse 3.6s ease-in-out infinite;
 }
 
 .bulb:nth-child(2n) {
-  animation-delay: 0.18s;
+  animation-delay: 0.45s;
 }
 
 .bulb:nth-child(3n) {
-  animation-delay: 0.37s;
-}
-
-.bulb:nth-child(4n) {
-  animation-delay: 0.55s;
-}
-
-.cta-arrow {
-  animation: cta-arrow-wiggle 1.1s ease-in-out infinite;
-  transform-origin: left center;
-}
-
-@keyframes cta-arrow-wiggle {
-  0%,
-  100% {
-    transform: scaleX(1) translateX(0);
-    opacity: 0.7;
-  }
-  50% {
-    transform: scaleX(1.35) translateX(4px);
-    opacity: 1;
-  }
+  animation-delay: 0.9s;
 }
 
 @keyframes floaty {
@@ -193,8 +163,7 @@ body {
 
   .edition-marquee,
   .bulb,
-  .floaty,
-  .cta-arrow {
+  .floaty {
     animation: none;
   }
 
@@ -208,7 +177,6 @@ body {
   .js-hero-logo,
   .js-hero-float,
   .js-hero-spark,
-  .js-hero-cta,
   .js-hero-line {
     opacity: 1 !important;
     transform: none !important;

@@ -273,16 +273,6 @@ export default function MenuExperience() {
         });
       });
 
-      gsap.to(".js-hero-cta", {
-        y: -4,
-        scale: 1.04,
-        duration: 0.9,
-        ease: "sine.inOut",
-        yoyo: true,
-        repeat: -1,
-        delay: 1.4,
-      });
-
       gsap.to(".js-hero-line", {
         rotation: 1.2,
         duration: 2.8,
@@ -373,10 +363,10 @@ export default function MenuExperience() {
                 block: "start",
               });
             }}
-            className="js-hero-item js-hero-cta mt-9 inline-flex min-h-12 items-center gap-3 rounded-full border border-amber/40 bg-wine/80 px-6 font-label text-[0.68rem] uppercase tracking-[0.28em] text-amber shadow-[0_0_24px_rgba(240,193,74,0.25)] transition-transform active:scale-[0.98]"
+            className="js-hero-item mt-9 inline-flex min-h-12 items-center gap-3 rounded-full border border-amber/40 bg-wine/80 px-6 font-label text-[0.68rem] uppercase tracking-[0.28em] text-amber transition-transform active:scale-[0.98]"
           >
             {brand.cta}
-            <span aria-hidden className="cta-arrow h-px w-8 bg-amber/70" />
+            <span aria-hidden className="h-px w-8 bg-amber/70" />
           </a>
         </div>
 
