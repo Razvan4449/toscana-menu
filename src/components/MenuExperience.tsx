@@ -15,6 +15,7 @@ import {
   PastaDoodle,
   RosemaryDoodle,
   ScribbleLine,
+  SpoonDoodle,
   StarDoodle,
   TomatoDoodle,
   WineDoodle,
@@ -22,6 +23,23 @@ import {
 import { brand, courses, drinks, type Course } from "@/data/menu";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
+
+function HeroChaos() {
+  return (
+    <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden>
+      <TomatoDoodle className="js-hero-float absolute left-[6%] top-[22%] w-11 opacity-80 sm:w-14" />
+      <OliveDoodle className="js-hero-float absolute right-[8%] top-[26%] w-9 opacity-75 sm:w-11" />
+      <WineDoodle className="js-hero-float absolute left-[10%] bottom-[28%] w-8 opacity-70 sm:w-10" />
+      <BasilDoodle className="js-hero-float absolute right-[12%] bottom-[32%] w-12 opacity-65" />
+      <PastaDoodle className="js-hero-float absolute -left-4 top-[48%] w-28 opacity-45 sm:w-36" />
+      <SpoonDoodle className="js-hero-float absolute right-[4%] top-[42%] w-7 rotate-12 opacity-70 sm:w-8" />
+      <StarDoodle className="js-hero-spark absolute left-[18%] top-[16%] w-3 opacity-90" />
+      <StarDoodle className="js-hero-spark absolute right-[16%] top-[18%] w-4 opacity-80" />
+      <StarDoodle className="js-hero-spark absolute left-[22%] bottom-[36%] w-3.5 opacity-70" />
+      <StarDoodle className="js-hero-spark absolute right-[24%] bottom-[40%] w-3 opacity-75" />
+    </div>
+  );
+}
 
 function EditionRibbon({ className = "" }: { className?: string }) {
   return (
@@ -166,17 +184,113 @@ export default function MenuExperience() {
 
       const heroTl = gsap.timeline({ defaults: { ease: "power3.out" } });
       heroTl
-        .from(".js-hero-item", {
-          y: 28,
+        .from(".js-hero-float", {
+          scale: 0,
           opacity: 0,
-          stagger: 0.1,
-          duration: 0.85,
+          rotation: () => gsap.utils.random(-40, 40),
+          stagger: { each: 0.06, from: "random" },
+          duration: 0.7,
+          ease: "back.out(2.2)",
         })
         .from(
           ".js-hero-logo",
-          { scale: 0.9, opacity: 0, duration: 0.9, ease: "back.out(1.5)" },
-          0.05,
+          {
+            scale: 0.35,
+            opacity: 0,
+            rotation: -12,
+            duration: 1.05,
+            ease: "elastic.out(1, 0.45)",
+          },
+          0.12,
+        )
+        .from(
+          ".js-hero-item",
+          {
+            y: 36,
+            opacity: 0,
+            rotation: () => gsap.utils.random(-4, 4),
+            stagger: 0.09,
+            duration: 0.75,
+            ease: "back.out(1.6)",
+          },
+          0.35,
+        )
+        .from(
+          ".js-hero-spark",
+          {
+            scale: 0,
+            opacity: 0,
+            stagger: 0.08,
+            duration: 0.45,
+            ease: "back.out(3)",
+          },
+          0.5,
         );
+
+      // Goofy idle loops after the entrance settles
+      gsap.to(".js-hero-logo", {
+        y: -10,
+        rotation: 2.5,
+        duration: 2.2,
+        ease: "sine.inOut",
+        yoyo: true,
+        repeat: -1,
+        delay: 1.1,
+      });
+
+      gsap.to(".js-hero-logo", {
+        scale: 1.03,
+        duration: 1.4,
+        ease: "sine.inOut",
+        yoyo: true,
+        repeat: -1,
+        delay: 1.1,
+      });
+
+      gsap.utils.toArray<HTMLElement>(".js-hero-float").forEach((el, i) => {
+        gsap.to(el, {
+          y: gsap.utils.random(-18, -8),
+          x: gsap.utils.random(-10, 10),
+          rotation: gsap.utils.random(-18, 18),
+          duration: gsap.utils.random(2.4, 4.2),
+          ease: "sine.inOut",
+          yoyo: true,
+          repeat: -1,
+          delay: 0.8 + i * 0.12,
+        });
+      });
+
+      gsap.utils.toArray<HTMLElement>(".js-hero-spark").forEach((el, i) => {
+        gsap.to(el, {
+          scale: gsap.utils.random(0.55, 1.35),
+          rotation: 180,
+          opacity: gsap.utils.random(0.35, 1),
+          duration: gsap.utils.random(0.7, 1.3),
+          ease: "sine.inOut",
+          yoyo: true,
+          repeat: -1,
+          delay: i * 0.15,
+        });
+      });
+
+      gsap.to(".js-hero-cta", {
+        y: -4,
+        scale: 1.04,
+        duration: 0.9,
+        ease: "sine.inOut",
+        yoyo: true,
+        repeat: -1,
+        delay: 1.4,
+      });
+
+      gsap.to(".js-hero-line", {
+        rotation: 1.2,
+        duration: 2.8,
+        ease: "sine.inOut",
+        yoyo: true,
+        repeat: -1,
+        delay: 1.2,
+      });
 
       gsap.utils.toArray<HTMLElement>(".js-reveal").forEach((el) => {
         gsap.from(el, {
@@ -220,6 +334,7 @@ export default function MenuExperience() {
       {/* HERO */}
       <header className="relative flex min-h-[100svh] flex-col overflow-hidden bg-night text-parchment">
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_50%_28%,rgba(240,193,74,0.22),transparent_52%),radial-gradient(ellipse_at_80%_90%,rgba(158,59,42,0.28),transparent_45%)]" />
+        <HeroChaos />
 
         <div className="relative z-10 flex items-center justify-between px-5 pt-[max(1.1rem,env(safe-area-inset-top))] sm:px-8">
           <p className="js-hero-item font-label text-[0.62rem] uppercase tracking-[0.3em] text-amber">
@@ -236,16 +351,13 @@ export default function MenuExperience() {
         </div>
 
         <div className="relative z-10 flex flex-1 flex-col items-center justify-center px-5 pb-10 pt-6 text-center sm:px-8">
-          <StarDoodle className="js-hero-item absolute left-6 top-28 w-4 opacity-80" />
-          <StarDoodle className="js-hero-item absolute right-8 top-36 w-5 opacity-70" />
-
-          <div className="js-hero-logo">
+          <div className="js-hero-logo will-change-transform">
             <ChefLogo size="hero" priority className="mx-auto max-w-[72vw]" />
           </div>
 
           <h1 className="sr-only">{brand.name}</h1>
 
-          <p className="js-hero-item mt-5 max-w-[18rem] font-display text-[1.65rem] leading-snug text-butter sm:max-w-md sm:text-[2rem]">
+          <p className="js-hero-item js-hero-line mt-5 max-w-[18rem] font-display text-[1.65rem] leading-snug text-butter sm:max-w-md sm:text-[2rem]">
             {brand.heroLine}
           </p>
           <p className="js-hero-item mt-4 max-w-xs text-sm leading-relaxed text-parchment/65 sm:max-w-sm sm:text-base">
@@ -261,10 +373,10 @@ export default function MenuExperience() {
                 block: "start",
               });
             }}
-            className="js-hero-item mt-9 inline-flex min-h-12 items-center gap-3 rounded-full border border-amber/40 bg-wine/80 px-6 font-label text-[0.68rem] uppercase tracking-[0.28em] text-amber transition-transform active:scale-[0.98]"
+            className="js-hero-item js-hero-cta mt-9 inline-flex min-h-12 items-center gap-3 rounded-full border border-amber/40 bg-wine/80 px-6 font-label text-[0.68rem] uppercase tracking-[0.28em] text-amber shadow-[0_0_24px_rgba(240,193,74,0.25)] transition-transform active:scale-[0.98]"
           >
             {brand.cta}
-            <span aria-hidden className="h-px w-8 bg-amber/70" />
+            <span aria-hidden className="cta-arrow h-px w-8 bg-amber/70" />
           </a>
         </div>
 
