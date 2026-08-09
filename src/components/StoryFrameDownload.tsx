@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useState } from "react";
+import { brand } from "@/data/menu";
 
 const FRAME_SRC = "/vasilius-story-frame.png";
 const FRAME_NAME = "vasilius-story-frame.png";
@@ -70,12 +71,12 @@ export default function StoryFrameDownload() {
         type="button"
         onClick={() => void handleDownload()}
         disabled={status === "working"}
-        className="inline-flex min-h-14 w-full items-center justify-center rounded-full border-2 border-amber/45 bg-amber/10 px-8 font-display text-xl text-amber transition-transform active:scale-[0.98] disabled:opacity-60"
+        className="inline-flex min-h-14 w-full items-center justify-center rounded-full border-2 border-amber/45 bg-amber/10 px-5 text-center font-display text-[1.15rem] leading-tight text-amber transition-transform active:scale-[0.98] disabled:opacity-60 sm:px-8 sm:text-xl"
       >
-        {status === "working" ? "Se pregateste…" : "Salveaza frame IG"}
+        {status === "working" ? "Se pregateste…" : brand.giftDownloadCta}
       </button>
       <p className="mt-3 text-center text-[0.8rem] leading-relaxed text-parchment/50">
-        PNG transparent — pune-l peste poza in Instagram Stories.
+        {brand.giftDownloadHint}
       </p>
     </div>
   );

@@ -27,14 +27,13 @@ export default function CadouPage() {
 
         <div className="flex flex-1 flex-col items-center justify-center py-8 text-center">
           <p className="font-label text-[0.68rem] uppercase tracking-[0.34em] text-amber">
-            Cadou de la Chef
+            {brand.giftButton}
           </p>
           <h1 className="mt-3 font-display text-[clamp(2.2rem,10vw,3.2rem)] leading-none">
-            Frame Instagram
+            {brand.giftPageTitle}
           </h1>
           <p className="mx-auto mt-4 max-w-sm text-[0.95rem] leading-relaxed text-parchment/65">
-            Un cadru transparent cu logo-ul VASILIU’S — salveaza-l si pune-l peste
-            poza ta in Stories.
+            {brand.giftPageBody}
           </p>
 
           <div className="mt-10 w-full">

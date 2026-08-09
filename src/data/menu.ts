@@ -17,6 +17,11 @@ export const brand = {
   finaleSub: "Ma inclin.",
   chefButton: "Despre Chef",
   giftButton: "Cadou de la Chef",
+  giftPageTitle: "Frame Instagram",
+  giftPageBody:
+    "Speram ca v a placut experienta! S a mancat s a baut s a ras va mai asteptam. Steagu sus vive la france.",
+  giftDownloadCta: "Ia de aici Frame TOP de story!",
+  giftDownloadHint: "Un frame mai asa de story",
   chefPageTitle: "Chef Vasiliu",
   chefBio:
     "Experienta te nasti cu ea nu se capata. Dintre cele mai mari bucatarii alea lumii Est-Vestice a celor mai bune hoteluri de 7 stele cazatoare, castigator al bileleor de aur si co starul shoului ACEL URS, gateste cu maiestrie, grija si atentie la neatentie. Cateodata preparatul e despre preparat. si atat. in rest e doar vorba.",
